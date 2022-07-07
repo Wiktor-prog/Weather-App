@@ -1,6 +1,10 @@
 import React from 'react';
 import './App.css';
 
+const api = {
+  key: api.openweathermap.org/data/2.5/forecast?id=524901&appid:{'3a36dda54d7c05d1927b2e1d96a9b90e'}
+}
+
 function App() {
   return (
     <div className="App">
