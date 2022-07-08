@@ -1,11 +1,17 @@
-import React from 'react';
+import React, {useEffect, useState } from 'react';
 import './App.css';
 
-const api = {
-  key: api.openweathermap.org/data/2.5/forecast?id=524901&appid:{'3a36dda54d7c05d1927b2e1d96a9b90e'}
-}
-
 function App() {
+  const [city, setCity] = useState('')
+  const [locationinfo, setLocationinfo] = useState({})
+
+  useEffect = () => {
+    fetch(`http://api.weatherapi.com/v1/forecast.json?key=5f120783051b409e82f14337220807&q=${city}&days=1&aqi=no&alerts=no`)
+    .then(response => response.json())
+    .then(data => console.log(data));
+
+  };
+
   return (
     <div className="App">
       <h2>Simple Weather App</h2>
@@ -16,14 +22,19 @@ function App() {
             <input  
               type ="text" 
               placeholder="Enter a city"
+              value={city}
+              onChange={(event) => setCity(event.target.value)}
               />
+              <button onClick={useEffect}>Search</button>
           </div>
+
           <div className ="location-container">
             <div className ="location">Warsaw</div>
           </div>
           <div className ="weather-box">
             <div className ="weather">24°C</div>
           </div>
+
         </div>
       </main>
     </div>

@@ -25,7 +25,25 @@ h2 {
   border-left: none;
   border-right: none;
   background-color: transparent;
+  color: white
 }
+
+button {
+  border: solid 1px white;
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 24px;
+  margin-left: 20px;
+  border-radius: 8px;
+  transition: 0.3s
+}
+button:hover {
+  background-color: white;
+  color:  rgb(25, 58, 131);
+  transition: 0.3s
+}
+
 .search p {
   font-size: 20px;
   font-weight: 500;
