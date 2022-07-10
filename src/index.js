@@ -5,21 +5,22 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createStore } from 'redux'
 
- const API_KEY = "5f120783051b409e82f14337220807"
- const BASE_URL = "http://api.weatherapi.com/v1"
+const API_KEY = "5f120783051b409e82f14337220807"
+const BASE_URL = "http://api.weatherapi.com/v1"
 
-const locationInfo = () => {
-  return{
-    name: 'LOCATION',
+const  Weather = {
+  data: {
+    location:{
+      name: "",
+      country: ""
+    },
+    current: {
+      temp_c: ""
+    }
   }
 }
-const tempInfo = () => {
-  return{
-    name: 'TEMP',
-  }
-}
 
-const WeaterInfo = (state,action) => {
+const WeatherInfo = (state = Weather, action) => {
   switch (action) {
     case "LOCATION":
       return state = API_KEY;
@@ -28,8 +29,8 @@ const WeaterInfo = (state,action) => {
   }
 }
 
-let store = createStore(WeaterInfo);
-store.subscribe(() => console.log(store.getState()))
+const store = createStore(WeatherInfo)
+window.store = store;
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
