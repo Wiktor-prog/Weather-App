@@ -1,42 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import { createRoot } from 'react-dom/client';
+import { Provider } from 'react-redux';
+import { store } from './app/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createStore } from 'redux'
+import './index.css';
 
-const API_KEY = "5f120783051b409e82f14337220807"
-const BASE_URL = "http://api.weatherapi.com/v1"
+const container = document.getElementById('root');
+const root = createRoot(container);
 
-const  Weather = {
-  data: {
-    location:{
-      name: "",
-      country: ""
-    },
-    current: {
-      temp_c: ""
-    }
-  }
-}
-
-const WeatherInfo = (state = Weather, action) => {
-  switch (action) {
-    case "LOCATION":
-      return state = API_KEY;
-    case "TEMP": 
-      return state = API_KEY;
-  }
-}
-
-const store = createStore(WeatherInfo)
-window.store = store;
-
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 
