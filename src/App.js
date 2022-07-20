@@ -16,7 +16,8 @@ const Fetch = () => {
     }))
   };
 
-  return (
+return (
+  
     <div className="App">
     <main>
       <h2>Simple Weather App</h2>
@@ -31,11 +32,12 @@ const Fetch = () => {
             />
             <button onClick={Fetch}>Search</button>
         </div>
+        <div className ="weather-box">
+         <div className ="weather">{cityInfo.current}°C</div>
+        </div>
+
         <div className ="location-container">
          <div className ="location">{cityInfo.country}{" "}{cityInfo.name}</div>
-        </div>
-       <div className ="weather-box">
-         <div className ="weather">{cityInfo.current}°C</div>
         </div>
      </div>
    </main>
