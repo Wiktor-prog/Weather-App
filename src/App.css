@@ -1,7 +1,7 @@
-.App {
+.Search {
   padding: 30px;
-  width: 500px;
-  height: 420px;
+  width: 600px;
+  height: 500px;
   margin: 0 auto;
   background: linear-gradient(90deg, rgb(25, 58, 131) 0%, rgb(31, 45, 122) 35%);
   border-radius: 20px;
@@ -9,6 +9,39 @@
   padding: 20px;
   box-shadow: 6px 4px rgb(109, 177, 255);;
 }
+.Details {
+  padding: 30px;
+  width: 600px;
+  height: 340px;
+  margin: 0 auto;
+  background: linear-gradient(90deg, rgb(25, 58, 131) 0%, rgb(31, 45, 122) 35%);
+  border-radius: 20px;
+  border: 1px solid;
+  padding: 20px;
+  box-shadow: 6px 4px rgb(109, 177, 255);;
+}
+.details-info p {
+  font-size: 18px;
+  color: #fff;
+  padding: 6px;
+  margin: 10px 14px;
+  margin-top: 30px;
+}
+.details-btn {
+font-size: 18px;
+border: 0.5px solid;
+padding: 10px;
+}
+
+.icon {
+  font-size:  24px;
+  color: #fff;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+
+
 h2 {
   text-align: center;
   font-size: 24px;
@@ -57,7 +90,7 @@ button:hover {
   transition: 0.3s
 }
 
-.search p {
+.location-name p {
   font-size: 20px;
   font-weight: 500;
   color: rgb(255, 255, 255);
@@ -73,7 +106,8 @@ button:hover {
   font-weight: 700;
   text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5);
 }
- .weather-box .weather {
+ .weather-container .weather {
+  display: block;
   text-align: center;
   font-size: 64px;
   font-weight: 700;
