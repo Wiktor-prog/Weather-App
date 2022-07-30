@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 function Details() {
 
-const [city, setDetails] = useState("warsaw")
+const [city, setDetails] = useState("")
 const [detailsInfo, setDetailsInfo] = useState({})
 let navigate = useNavigate();
 
@@ -16,10 +16,11 @@ const DetailsApi = () => {
   .then((data) => setDetailsInfo({
     current: data.current.feelslike_c,
     humidityinf: data.current.humidity,
-    wind: data.current.wind_mph ,
+    wind: data.current.wind_mph,
     condition: data.current.condition.text,
-  
+    img: data.current.condition.icon
   }))
+  
 };
 
 return (
@@ -32,18 +33,35 @@ return (
 }}
   />
 
-  <h2>Details</h2>
+  <h2>Weather Details</h2>
+
     <button 
     className="details-btn"
-    value={city}
     onChange={(event) => setDetails(event.target.value)} 
     onClick={DetailsApi}>more details
     </button>
 
+    <input id="details-input"  
+      type ="text" 
+      placeholder="Search weather details in you city"
+      value={city}
+      onChange={(event) => setDetails(event.target.value)}
+    />
+
+    <div className="conu">
+    {detailsInfo.country}
+    </div>
+
   <div className="details-info">
-    <p>wind speed: {detailsInfo.wind} mph</p>
-    <p>feels temp: {detailsInfo.current} °C</p>
-    <p>humidity: {detailsInfo.humidityinf} </p>
+    <div className="condition">
+      <h1>{detailsInfo.condition}</h1>
+      <img src={detailsInfo.img} alt="icon"></img>
+    </div>
+    <div className="details-container">
+      <p>wind speed: {detailsInfo.wind} mph</p>
+      <p>feels temp: {detailsInfo.current} °C</p>
+      <p>humidity: {detailsInfo.humidityinf} </p>
+    </div>
   </div>
 </div>
 )}

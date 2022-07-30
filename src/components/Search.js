@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Search() {
 
-const [city, setCity] = useState("Warsaw")
+const [city, setCity] = useState("")
 const [cityInfo, setCityInfo] = useState({})
 let navigate = useNavigate();
 
@@ -13,10 +13,10 @@ const SearchApi = () => {
   .then((data) => setCityInfo({
     name: data.location.name,
     country: data.location.country,
-    current: data.current.temp_c
+    current: data.current.temp_c,
+    
   }))
 };
-
 return (
   
 <div className="Search">
@@ -30,6 +30,7 @@ return (
       value={city}
       onChange={(event) => setCity(event.target.value)}
       />
+
       <button onClick={SearchApi}>Search</button>
       <button 
       onClick={() => {
