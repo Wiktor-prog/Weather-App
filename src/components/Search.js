@@ -8,11 +8,10 @@ const APIkey = "5f120783051b409e82f14337220807"
 
 const [cityInfo, setCityInfo] = useState("")
 const [city, setCity] = useState ( () => {
-const savedItem = localStorage.getItem("city");
-const parsedItem = JSON.parse(savedItem);
+const saveCity = localStorage.getItem("city");
+const parsedItem = JSON.parse(saveCity);
   return parsedItem || "";
 });
-
 
 const SearchApi = () => {
   fetch([`http://api.weatherapi.com/v1/forecast.json?key=${APIkey}&q=${city}&days=1&aqi=no&alerts=no`])
