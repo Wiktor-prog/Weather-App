@@ -9,8 +9,8 @@ const APIkey = "5f120783051b409e82f14337220807"
 const [cityInfo, setCityInfo] = useState("")
 const [city, setCity] = useState ( () => {
 const saveCity = localStorage.getItem("city");
-const parsedItem = JSON.parse(saveCity);
-  return parsedItem || "";
+const parsedCity = JSON.parse(saveCity);
+  return parsedCity || "";
 });
 
 const SearchApi = () => {
