@@ -13,6 +13,7 @@ const [detailsInfo, setDetailsInfo] = useState("")
 const [city, setDetails]= useState(() =>{
 const saveDetails = localStorage.getItem("city");
 const parsedDetails = JSON.parse(saveDetails);
+
   return parsedDetails || "";
 })
 
@@ -33,33 +34,35 @@ useEffect(() => {
 })
 
 return (
-  <div className="Details">
-    <FontAwesomeIcon 
-    className="icon" 
-    icon={ faArrowLeftLong }
-    onClick={() => {
-    navigate ("/");
+    <div className="Details">
+      <FontAwesomeIcon 
+      className="icon" 
+      icon={ faArrowLeftLong }
+      onClick={() => {
+      navigate ("/");
   }}/>
 
   <h2>Weather Details</h2>
-      <button 
-        className="details-btn"
-        onChange={(event) => setDetails(event.target.value)} 
-        onClick={DetailsApi}>more details
-      </button>
+        <button 
+          className="details-btn"
+          onChange={(event) => setDetails(event.target.value)} 
+          onClick={DetailsApi}>more details
+        </button>
 
-      <div className="details-info">
-        <div className="condition">
-          <h1>{detailsInfo.condition}</h1>
-          <img src={detailsInfo.img} alt="icon"></img>
-        </div>
-        <div className="details-container">
-          <p>wind speed: {detailsInfo.wind} mph</p>
-          <p>feels temp: {detailsInfo.current} °C</p>
-          <p>humidity: {detailsInfo.humidityinf} </p>
+        <div className="details-info">
+          <div className="condition">
+              <h1>{detailsInfo.condition}</h1>
+              <img src={detailsInfo.img} alt="icon"></img>
+          </div>
+
+          <div className="details-container">
+              <p>wind speed: {detailsInfo.wind} mph</p>
+              <p>feels temp: {detailsInfo.current} °C</p>
+              <p>humidity: {detailsInfo.humidityinf} </p>
+          </div>
+
         </div>
       </div>
-    </div>
   )
 }
 

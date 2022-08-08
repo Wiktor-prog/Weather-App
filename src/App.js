@@ -5,7 +5,6 @@ import Search from "./components/Search";
 import Details from "./components/Details";
 
 
-
 export default function App() {
   return (
     <div className="App">

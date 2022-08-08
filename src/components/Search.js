@@ -24,13 +24,14 @@ const SearchApi = () => {
 };
 
 useEffect(() => {
-  localStorage.setItem("city", JSON.stringify(city))
+  window.localStorage.setItem("city", JSON.stringify(city))
 })
 
 return (
     <div className="Search">
       <h2>Simple Weather App</h2>
         <div className ="location-name">
+          
           <p>Location</p>
         <div className ="search-container">
             <input  
@@ -41,7 +42,10 @@ return (
               onChange={(event) => setCity(event.target.value)}
             />
 
-            <button onClick={SearchApi}>Search</button>
+            <button onClick={SearchApi}>
+              Search
+            </button>
+
             <button 
             onClick={() => {
               navigate ("/details");
@@ -55,6 +59,7 @@ return (
         <div className ="location-container">
           <div className ="location">{cityInfo.country}{" "}{cityInfo.name}</div>
         </div>
+
       </div>
     </div>
   )
