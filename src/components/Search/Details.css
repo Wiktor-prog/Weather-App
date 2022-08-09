@@ -1,0 +1,34 @@
+.Details {
+  background: rgba(117, 86, 72, 0.3); 
+  border-radius: 10px;
+}
+
+.details-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.details-info p {
+  font-size: 20px;
+  color: #fff;
+  font-weight: bold;
+  margin: 10px 14px;
+  margin-top: 36px;
+  display: flex;
+  text-shadow: 2px 2px 2px rgba(12, 12, 12, 0.5);
+}
+
+.condition{
+  padding-top: 30px;
+  padding-bottom: 12px;
+  font-size:  12px;
+  margin: 10px 24px;
+  color: rgb(255, 255, 255);
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: 14px;
+  justify-content: center;
+  text-shadow: 2px 2px 2px rgba(12, 12, 12, 0.5);
+}
+
