@@ -3,39 +3,47 @@ import { FaSearch } from 'react-icons/fa';
 import "../Search/Search.css"
 import  "../Search/Details.css"
 
+
 export default function Search() {
   
-  const APIkey = "5f120783051b409e82f14337220807"
-  const [cityInfo, setCityInfo] = useState("")
-  const [city, setCity] = useState ( () => {
-  const saveCity = localStorage.getItem("city");
+const APIkey = "5f120783051b409e82f14337220807"
+
+const [cityInfo, setCityInfo] = useState ([])
+const [city, setCity] = useState ( () => {
+
+  const saveCity = localStorage.getItem('city');
   const parsedCity = JSON.parse(saveCity);
 
   return parsedCity || "";
-
 });
 
   const SearchApi = () => {
     fetch([`http://api.weatherapi.com/v1/forecast.json?key=${APIkey}&q=${city}&days=1&aqi=no&alerts=no`])
-    .then(response => response.json())
-    .then((data) => setCityInfo({
-      name: data.location.name,
-      country: data.location.country,
 
-      current: data.current.temp_c,
-      current: data.current.feelslike_c,
+    .then(response => 
+      response.json())
 
-      humidityinf: data.current.humidity,
-      wind: data.current.wind_mph,
-      condition: data.current.condition.text,
+          .then((data) => 
+          setCityInfo({
+            name: data.location.name,
+            country: data.location.country,
 
-      img: data.current.condition.icon
+            current: data.current.temp_c,
+            current: data.current.feelslike_c,
+
+            humidityinf: data.current.humidity,
+            wind: data.current.wind_mph,
+            condition: data.current.condition.text,
+
+            img: data.current.condition.icon
+
     }))
   };
 
   useEffect(() => {
     window.localStorage.setItem("city", JSON.stringify(city))
   })
+  
 
   return (
       <div className="Search">
