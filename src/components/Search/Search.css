@@ -54,7 +54,7 @@ button {
 }
 
 button:hover{
-  color: rgb(221, 155, 101);
+  color: rgb(231, 182, 142);
 }
 
 .refresh-btn {
@@ -65,7 +65,7 @@ button:hover{
 }
 
 .refresh-btn:hover {
-  color: rgb(221, 155, 101);
+  color: rgb(236, 114, 83);
   transform: rotate(360deg);
   transition: 0.5s;
 }

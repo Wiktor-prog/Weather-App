@@ -86,7 +86,6 @@ export default function Search() {
                 <button onClick={SearchApi}>
                   <FaSearch />
                 </button>
-
             </div>  
             
               <div className ="weather-container">
@@ -96,30 +95,33 @@ export default function Search() {
               <div className ="location-container">
                 <div className ="location">{cityInfo.country}{" "}{cityInfo.name}</div>
               </div>
-            </div>
+          </div>
 
             <div className="Details">
+
                 <div className="condition">
                     <h1>{cityInfo.condition}</h1>
-                    <img src={cityInfo.img} alt="icon"></img>
+                    <img 
+                    src={cityInfo.img} 
+                    alt="icon"></img> 
                 </div>
 
                 <div className="details-container">
-                  <div className="content"> 
-                  <FaTemperatureHigh /> 
-                    <p>feels temp: {cityInfo.current}&deg;C</p>
-                  </div>
+                      <div className="content">   
+                        <FaTemperatureHigh /> 
+                        <p>feels temp: {cityInfo.current}&deg;C</p>
+                      </div>
 
-                  <div className="content"> 
-                  <FaWater /> 
-                    <p>humidity: {cityInfo.humidityinf}</p>
-                  </div>
+                      <div className="content"> 
+                        <FaWater /> 
+                        <p>humidity: {cityInfo.humidityinf}</p>
+                      </div>
 
-                  <div className="content"> 
-                  <FaWind /> 
-                    <p>wind: {cityInfo.wind} mph</p>
+                      <div className="content"> 
+                        <FaWind /> 
+                        <p>wind: {cityInfo.wind} mph</p>
+                    </div>
                   </div>
-                </div>
 
               </div>
           </div>
