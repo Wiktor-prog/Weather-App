@@ -1,12 +1,11 @@
+
 .App {
   padding:  80px;
 }
 
 .Search {
-  justify-content: center;
-  align-items: center;
   padding: 30px;
-  width: 600px;
+  width: 620px;
   height: 720px;
   margin: 0 auto;
   background: url(../Assets/cloudy.jpg);
@@ -14,7 +13,7 @@
   border-radius: 20px;
   border: 1px solid;
   padding: 20px;
-  box-shadow: 6px 4px rgb(240, 123, 94);;
+  box-shadow: 6px 4px rgb(236, 114, 83);;
 }
 
 h2 {
@@ -74,7 +73,7 @@ span {
 
 .location-container .location {
   text-align: center;
-  font-size: 36px;
+  font-size: 40px;
   color: rgb(255, 255, 255);
   margin-top: 24px;
   padding-bottom: 5rem;
@@ -85,7 +84,7 @@ span {
 .weather-container .weather {
   display: block;
   text-align: center;
-  font-size: 56px;
+  font-size: 60px;
   font-weight: 700;
   padding-top: 36px;
   color: rgb(255, 255, 255);
