@@ -12,17 +12,19 @@
   background-size: cover;
   border-radius: 20px;
   border: 1px solid;
-  padding: 20px;
   box-shadow: 6px 4px rgb(236, 114, 83);;
 }
 
 h2 {
   text-align: center;
   font-size: 24px;
-  margin-bottom: 20px ;
-  padding-bottom: 10px;
   color: rgb(255, 255, 255);
   text-shadow: 2px 2px 2px rgba(12, 12, 12, 0.5);
+}
+
+span {
+  font-size: 54px;
+  padding: 8px;
 }
 
 input {
@@ -47,16 +49,25 @@ button {
   cursor: pointer;
   font-size: 24px;
   margin-left: 20px;
+  padding-top: 4px;
   transition: 0.3s
 }
 
 button:hover{
-  color: rgb(240, 123, 94);
+  color: rgb(221, 155, 101);
 }
 
-span {
-  font-size: 54px;
-  padding: 8px;
+.refresh-btn {
+  color: #fff;
+  padding: 0;
+  position: relative;
+  left: 90%
+}
+
+.refresh-btn:hover {
+  color: rgb(221, 155, 101);
+  transform: rotate(360deg);
+  transition: 0.5s;
 }
 
 ::placeholder {

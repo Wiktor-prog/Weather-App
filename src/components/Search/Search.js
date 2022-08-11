@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react"; 
+import { faRotateRight} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { FaSearch, FaWater, FaWind, FaTemperatureHigh} from 'react-icons/fa';
 import "../Search/Search.css"
 import  "../Search/Details.css"
@@ -14,13 +16,12 @@ export default function Search() {
     return parsedInfo || "";
 })
 
-        const [city, setCity] = useState ( () => {
-            const saveCity = localStorage.getItem("city");
-            const parsedCity = JSON.parse(saveCity);
+  const [city, setCity] = useState ( () => {
+      const saveCity = localStorage.getItem("city");
+      const parsedCity = JSON.parse(saveCity);
 
-          return parsedCity || "";
+    return parsedCity || "";
 });
-
 
   const SearchApi = () => {
     fetch([`http://api.weatherapi.com/v1/forecast.json?key=
@@ -56,61 +57,71 @@ export default function Search() {
           ("cityInfo", JSON.stringify(cityInfo))
         });
 
+        const refresh = () => {
+          window.location.reload()
+        }
 
   return (
       <div className="Search">
 
-        <h2>Simple Weather App</h2>
+            <button 
+              className ="refresh-btn"
+              onClick={refresh}>
+              <FontAwesomeIcon 
+              icon={faRotateRight} />
+            </button>
+
+        <h2>Simple Weather App</h2>        
           <div className ="location-name">
-            
-          <div className ="search-container">
-          <p>Location</p>
-              <input  
-                type ="text"
-                name="city" 
-                placeholder="Enter a city"
-                value={city}
-                onChange={(event) => setCity(event.target.value)}
+            <div className ="search-container">
+                <p>Location</p>
+                    <input  
+                      type ="text"
+                      name="city" 
+                      placeholder="Enter a city"
+                      value={city}
+                      onChange={(event) => setCity(event.target.value)}
               />
+
+                <button onClick={SearchApi}>
+                  <FaSearch />
+                </button>
+
+            </div>  
             
-              <button onClick={SearchApi}>
-                <FaSearch />
-              </button>
-          </div>  
-          
-            <div className ="weather-container">
-              <div className ="weather">{cityInfo.current}&deg;C</div>
-            </div>
-
-            <div className ="location-container">
-              <div className ="location">{cityInfo.country}{" "}{cityInfo.name}</div>
-            </div>
-          </div>
-
-          <div className="Details">
-              <div className="condition">
-                  <h1>{cityInfo.condition}</h1>
-                  <img src={cityInfo.img} alt="icon"></img>
+              <div className ="weather-container">
+                <div className ="weather">{cityInfo.current}&deg;C</div>
               </div>
 
-              <div className="details-container">
-                <div className="content"> 
-                <FaTemperatureHigh /> 
-                  <p>feels temp: {cityInfo.current}&deg;C</p>
-                </div>
-
-                <div className="content"> 
-                <FaWater /> 
-                  <p>humidity: {cityInfo.humidityinf}</p>
-                </div>
-
-                <div className="content"> 
-                <FaWind /> 
-                  <p>wind: {cityInfo.wind} mph</p>
-                </div>
+              <div className ="location-container">
+                <div className ="location">{cityInfo.country}{" "}{cityInfo.name}</div>
               </div>
-
             </div>
+
+            <div className="Details">
+                <div className="condition">
+                    <h1>{cityInfo.condition}</h1>
+                    <img src={cityInfo.img} alt="icon"></img>
+                </div>
+
+                <div className="details-container">
+                  <div className="content"> 
+                  <FaTemperatureHigh /> 
+                    <p>feels temp: {cityInfo.current}&deg;C</p>
+                  </div>
+
+                  <div className="content"> 
+                  <FaWater /> 
+                    <p>humidity: {cityInfo.humidityinf}</p>
+                  </div>
+
+                  <div className="content"> 
+                  <FaWind /> 
+                    <p>wind: {cityInfo.wind} mph</p>
+                  </div>
+                </div>
+
+              </div>
           </div>
     
     );
