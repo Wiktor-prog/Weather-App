@@ -72,9 +72,8 @@ export default function Search() {
             </button>
 
         <h2>Simple Weather App</h2>        
-          <div className ="location-name">
+          
             <div className ="search-container">
-                <p>Location</p>
                     <input  
                       type ="text"
                       name="city" 
@@ -95,7 +94,7 @@ export default function Search() {
               <div className ="location-container">
                 <div className ="location">{cityInfo.country}{" "}{cityInfo.name}</div>
               </div>
-          </div>
+          
 
             <div className="Details">
 
