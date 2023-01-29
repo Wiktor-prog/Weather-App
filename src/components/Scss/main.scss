@@ -1,0 +1,9 @@
+// Variables and Color settings ////R
+
+ @use "./Build/_Colors" as *;
+ @use "./Build/Variables" as *;
+
+ // Components // 
+
+ @use "./Build/Components/Details.scss" as*;
+ @use "./Build/Components/Search.scss" as*;

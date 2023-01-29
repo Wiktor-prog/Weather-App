@@ -10,7 +10,9 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "create-scss": "^2.7.3",
     "cross-env": "^7.0.3",
+    "node-scss": "^7.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
@@ -24,7 +26,12 @@
     "start": "cross-env BROWSER=chrome react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cs-watch": "sass scss/main.scss css/style.css --watch --no-source-map",
+    "cs-compile": "sass scss/main.scss css/style.css --no-source-map",
+    "cs-compress": "sass scss/main.scss css/style.css --style=compressed --no-source-map",
+    "cs-prefix": "postcss css/style.css -o css/style.css --use autoprefixer -b 'last 4 versions' --no-source-map",
+    "cs-build": "npm-run-all cs-compile cs-compress cs-prefix"
   },
   "eslintConfig": {
     "extends": [

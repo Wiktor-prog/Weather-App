@@ -1,0 +1,37 @@
+$Font-Size: (
+  "font-size-18": 1.125rem,
+  "font-size-20": 1.25rem,
+  "font-size-24": 1.5rem,
+  "font-size-40": 2.5rem,
+  "font-size-54": 3.375rem,
+  "font-size-60": 3.75rem
+);
+
+$Paddings: (
+ "padding-0": 0,
+ "padding-8": .5rem,
+ "padding-10": .625rem,
+ "padding-20": 1.25rem,
+ "padding-24": 1.5rem,
+ "padding-30": 1.875rem,
+ "padding-36": 2.25rem,
+ "padding-80": 5rem,
+);
+
+$Margins: (
+ "margin-0": 0,
+ "margin-10": .625rem,
+ "margin-20": 1.25rem,
+ "margin-24": 1.5rem,
+ "margin-30": 1.875rem,
+ "margin-32": 2rem,
+ "margin-56": 3.5rem,
+ "margin-auto": auto,
+);
+
+$light-xs: 100;
+$light: 300;
+$normal: 400;
+$medium: 500;
+$bold: 700;
+$bold-xl: 900;

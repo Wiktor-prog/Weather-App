@@ -1,0 +1,41 @@
+@use "../Colors" as*;
+@use "../Variables" as*;
+
+
+.Details {
+  background: $Background-Details;
+  border-radius: 10px;}
+
+.details-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;}
+
+.details-container p {
+  font-size: map-get($Font-Size, font-size-18);
+  color: $Primay-Color;
+  text-align: center;
+  font-weight: $bold;
+  margin:  map-get($Margins, margin-10);
+  margin-top: map-get($Margins, margin-30 );
+  text-shadow: 2px 2px 2px rgba(12, 12, 12, 0.5);}
+
+.condition{
+  padding-top: map-get($Paddings, padding-20 );
+  padding-bottom: map-get($Paddings, padding-10 );
+  font-size:  map-get($Font-Size, font-size-12);
+  margin: map-get($Margins, margin-10, margin-24);
+  color: $Primay-Color;
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: 14px;
+  justify-content: center;
+  text-shadow: 2px 2px 2px rgba(12, 12, 12, 0.5);}
+
+.content {
+  text-align: center;
+  color: $Primay-Color;
+  font-size: map-get($Font-Size, font-size-20);
+  padding: map-get($Paddings, padding-20 );
+  font-weight: 100;}
+
