@@ -41,7 +41,7 @@ export default function Search() {
     window.localStorage.setItem 
     ("cityInfo",JSON.stringify(cityInfo))
   })
-  
+
   const refresh = () => {
     window.location.reload()
   };
@@ -55,7 +55,7 @@ export default function Search() {
           <FontAwesomeIcon
           icon={faRotateRight}/>
         </button>
-      
+
         <h2>Simple Weather App</h2>        
             <div className ="search-container">
                   <input  
@@ -69,7 +69,7 @@ export default function Search() {
                   <FaSearch />
                 </button>
             </div>  
-          
+
             <div className ="weather-container">
               <div className ="weather">{cityInfo.current}&deg;C</div>
             </div>
@@ -77,7 +77,7 @@ export default function Search() {
             <div className ="location-container">
               <div className ="location">{cityInfo.country}{" "}{cityInfo.name}</div>
             </div>
-        
+
             <div className="Details">
               <div className="condition">
                   <h1>{cityInfo.condition}</h1>
